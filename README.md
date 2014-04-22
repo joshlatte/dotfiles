@@ -1,5 +1,5 @@
 dotfiles
 ========
-cd ~/dotfiles
-chmod +x bootstrap.sh
-./bootstrap.sh
+cd ~/dotfiles  
+chmod +x bootstrap.sh  
+./bootstrap.sh  
