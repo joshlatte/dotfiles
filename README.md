@@ -1,5 +1,6 @@
 dotfiles
 ========
+http://blog.smalleycreative.com/tutorials/using-git-and-github-to-manage-your-dotfiles/
 ```
 git clone git://github.com/joshlatte/dotfiles.git
 cd ~/dotfiles
