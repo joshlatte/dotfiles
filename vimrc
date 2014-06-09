@@ -59,6 +59,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'wesQ3/vim-windowswap'
 Plugin 'kien/ctrlp.vim'
 Plugin 'wincent/Command-T'
+Plugin 'kchmck/vim-coffee-script'
 
 " scripts from vim-scripts.org/vim/scripts.html
 Plugin 'LustyExplorer'
