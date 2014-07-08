@@ -19,6 +19,9 @@ Plugin 'wesQ3/vim-windowswap'
 Plugin 'kien/ctrlp.vim'
 Plugin 'wincent/Command-T'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'digitaltoad/vim-jade'
+Plugin 'pangloss/vim-javascript'
+Plugin 'scrooloose/nerdtree'
 
 " scripts from vim-scripts.org/vim/scripts.html
 Plugin 'LustyExplorer'
@@ -189,6 +192,7 @@ set smarttab
 " 1 tab == 4 spaces
 set shiftwidth=2
 set tabstop=2
+set softtabstop=2
 
 " Linebreak on 500 characters
 set lbr
@@ -207,6 +211,9 @@ map k gk
 
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><cr> :noh<cr>
+
+" Open NERDTree with Ctrl+n
+map <C-n> :NERDTreeToggle<CR>
 
 " Smart way to move between windows
 map <C-j> <C-W>j
