@@ -17,7 +17,6 @@ Plugin 'slim-template/vim-slim.git'
 Plugin 'tpope/vim-fugitive'
 Plugin 'wesQ3/vim-windowswap'
 Plugin 'kien/ctrlp.vim'
-Plugin 'wincent/Command-T'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'pangloss/vim-javascript'
@@ -38,15 +37,12 @@ Plugin 'LustyExplorer'
 " see :h vundle for more details or wiki for FAQ
 " NOTE: comments after Plugin commands are not allowed.
 " Put your stuff after this line
+filetype on
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Prevent no end of line at end of file bullshit
-set binary
-set noeol
 
 " Sets how many lines of history VIM has to remember
 set history=700
