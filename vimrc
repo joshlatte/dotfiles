@@ -15,12 +15,14 @@ Plugin 'gmarik/vundle'
 " scripts on GitHub repos
 Plugin 'slim-template/vim-slim.git'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-dispatch'
 Plugin 'wesQ3/vim-windowswap'
 Plugin 'kien/ctrlp.vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'pangloss/vim-javascript'
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
 
 " scripts from vim-scripts.org/vim/scripts.html
 Plugin 'LustyExplorer'
