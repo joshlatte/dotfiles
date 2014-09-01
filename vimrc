@@ -31,6 +31,9 @@ filetype plugin indent on
 " Remap leader
 let mapleader = ","
 
+" Set hidden
+set hid
+
 " Set longer line history
 set history=1000
 
@@ -50,6 +53,8 @@ set showmatch
 set hlsearch " highlight search results
 set ignorecase " case insensitive
 set incsearch " show search matches as inputted
+" clears search with leader (,)/
+nmap <silent> <leader>/ :nohlsearch<CR>
 
 " No swap or backup
 set noswapfile
@@ -76,7 +81,7 @@ set softtabstop=2
 " Colorscheme desert || solarized || mustang
 syntax enable
 let g:solarized_termcolors=256
-colorscheme mustang
+colorscheme solarized
 set background=dark
 
 if has('gui_running')
