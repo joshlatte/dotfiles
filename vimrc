@@ -5,17 +5,21 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
+
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-dispatch'
+
 Plugin 'wesQ3/vim-windowswap'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
+
 Plugin 'slim-template/vim-slim.git'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'pangloss/vim-javascript'
 Plugin 'vim-scripts/LustyExplorer'
+
+Plugin 'scrooloose/syntastic'
 
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'fugalh/desert.vim'
