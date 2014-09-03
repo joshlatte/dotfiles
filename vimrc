@@ -54,6 +54,7 @@ set showmatch
 " Search
 set hlsearch " highlight search results
 set ignorecase " case insensitive
+set smartcase " case sensitive if using mixed case
 set incsearch " show search matches as inputted
 " clears search with leader (,)/
 nmap <silent> <leader>/ :nohlsearch<CR>
