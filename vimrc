@@ -83,7 +83,7 @@ set softtabstop=2
 " Colorscheme desert || solarized || mustang
 syntax enable
 let g:solarized_termcolors=256
-colorscheme solarized
+colorscheme desert
 set background=dark
 
 if has('gui_running')
