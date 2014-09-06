@@ -25,6 +25,9 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'fugalh/desert.vim'
 Plugin 'croaker/mustang-vim'
 
+Plugin 'nosami/Omnisharp'
+Plugin 'Valloric/YouCompleteMe'
+
 Plugin 'christoomey/vim-tmux-navigator'
 
 call vundle#end()
@@ -103,3 +106,33 @@ if has("mac") || has("macunix")
   vmap <D-j> <M-j>
   vmap <D-k> <M-k>
 endif
+
+" Omnisharp
+" (Experimental - uses vim-dispatch or vimproc plugin) - Start the omnisharp server for the current solution
+let g:syntastic_cs_checkers = ['syntax', 'semantic', 'issues']
+
+" Whitelist only .cs files for YouCompleteMe
+let g:ycm_filetype_whitelist = { 'cs': 1 }
+
+" Move the preview window (code documentation) to the bottom of the screen, so it doesn't move the code!
+set splitbelow
+
+nnoremap <leader>ss :OmniSharpStartServer<cr>
+nnoremap <leader>sp :OmniSharpStopServer<cr>
+
+" Force OmniSharp to reload the solution. Useful when switching branches etc.
+nnoremap <leader>rl :OmniSharpReloadSolution<cr>
+nnoremap <leader>cf :OmniSharpCodeFormat<cr>
+
+" Add syntax highlighting for types and interfaces
+nnoremap <leader>th :OmniSharpHighlightTypes<cr>
+
+augroup omnisharp_commands
+  autocmd!
+
+  " Set autocomplete function to OmniSharp (if not using YouCompleteMe completion plugin)
+  " autocmd FileType cs setlocal omnifunc=OmniSharp#Complete
+
+  " Asyncronous build with vim-dispatch
+  autocmd FileType cs nnoremap <leader>b :wa!<cr>:OmniSharpBuildAsync<cr>
+augroup END
