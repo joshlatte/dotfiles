@@ -17,6 +17,7 @@ Plugin 'slim-template/vim-slim.git'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'pangloss/vim-javascript'
+Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'vim-scripts/LustyExplorer'
 
 Plugin 'scrooloose/syntastic'
@@ -26,7 +27,7 @@ Plugin 'fugalh/desert.vim'
 Plugin 'croaker/mustang-vim'
 
 Plugin 'nosami/Omnisharp'
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 
 Plugin 'christoomey/vim-tmux-navigator'
 
@@ -68,6 +69,9 @@ set nobackup
 
 " NERDTree toggle = ctrl-n
 map <C-n> :NERDTreeToggle<CR>
+let g:NERDTreeMapOpenSplit='s'
+let g:NERDTreeMapOpenVSplit='v'
+
 
 " Set 7 lines to the cursor - when moving vertically using j/k
 set so=7
