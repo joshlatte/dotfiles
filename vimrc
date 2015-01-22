@@ -17,6 +17,7 @@ Plugin 'slim-template/vim-slim.git'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'pangloss/vim-javascript'
+Plugin 'groenewege/vim-less'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'vim-scripts/LustyExplorer'
 
@@ -26,7 +27,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'fugalh/desert.vim'
 Plugin 'croaker/mustang-vim'
 
-Plugin 'nosami/Omnisharp'
+Plugin 'OmniSharp/omnisharp-vim'
 " Plugin 'Valloric/YouCompleteMe'
 
 Plugin 'christoomey/vim-tmux-navigator'
@@ -42,6 +43,10 @@ set hid
 
 " Set longer line history
 set history=1000
+
+" Disable newline at EOF
+set binary
+set noeol
 
 " Wildmenu for more search results
 set wildmenu
