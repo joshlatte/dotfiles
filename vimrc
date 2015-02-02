@@ -23,6 +23,7 @@ Plugin 'vim-scripts/LustyExplorer'
 
 Plugin 'scrooloose/syntastic'
 
+Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'fugalh/desert.vim'
 Plugin 'croaker/mustang-vim'
@@ -115,6 +116,9 @@ if has("mac") || has("macunix")
   vmap <D-j> <M-j>
   vmap <D-k> <M-k>
 endif
+
+" Clean whitespace
+nnoremap <leader>w :StripWhitespace<cr>
 
 " Omnisharp
 " (Experimental - uses vim-dispatch or vimproc plugin) - Start the omnisharp server for the current solution
