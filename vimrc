@@ -13,6 +13,7 @@ Plugin 'wesQ3/vim-windowswap'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 
+Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'slim-template/vim-slim.git'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'digitaltoad/vim-jade'
@@ -136,6 +137,10 @@ let g:ycm_filetype_whitelist = { 'cs': 1 }
 
 " Move the preview window (code documentation) to the bottom of the screen, so it doesn't move the code!
 set splitbelow
+
+nnoremap <leader>w :StripWhitespace<cr>
+nnoremap <leader>ts :set tabstop=2 shiftwidth=2 expandtab<cr>
+nnoremap <leader>rt :retab<cr>
 
 nnoremap <leader>ss :OmniSharpStartServer<cr>
 nnoremap <leader>sp :OmniSharpStopServer<cr>
