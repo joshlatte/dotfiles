@@ -1,6 +1,6 @@
 [user]
 	name = Josh M
-	email = jmanuel@gapintelligence.com
+	email = josh.manuel@bydeluxe.com
 
 [alias]
   co = checkout
@@ -12,3 +12,6 @@
 	ui = true
 [core]
 	excludesfile = /Users/joshmanuel/.gitignore
+	editor = mvim -f
+[push]
+	default = simple
