@@ -24,7 +24,6 @@ Plugin 'vim-scripts/LustyExplorer'
 
 Plugin 'scrooloose/syntastic'
 
-Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'fugalh/desert.vim'
 Plugin 'croaker/mustang-vim'
