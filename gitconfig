@@ -13,3 +13,5 @@
 [core]
 	excludesfile = /Users/joshmanuel/.gitignore
 	editor = /usr/bin/vim
+[push]
+	default = simple

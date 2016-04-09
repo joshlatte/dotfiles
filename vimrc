@@ -4,7 +4,7 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-dispatch'
@@ -38,6 +38,9 @@ filetype plugin indent on
 
 " Remap leader
 let mapleader = ","
+
+" Automatically reload file if timestamps change
+set autoread
 
 " Set hidden
 set hid
@@ -122,6 +125,10 @@ endif
 
 " Clean whitespace
 nnoremap <leader>w :StripWhitespace<cr>
+
+"Reset spaces & expand tabs
+nnoremap <leader>ts :set tabstop=2 shiftwidth=2 expandtab<cr>
+nnoremap <leader>rt :retab<cr>
 
 " Omnisharp
 " (Experimental - uses vim-dispatch or vimproc plugin) - Start the omnisharp server for the current solution

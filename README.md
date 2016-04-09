@@ -7,6 +7,6 @@ chmod +x bootstrap.sh
 ./bootstrap.sh
 ```
 
-Vundle (https://github.com/gmarik/Vundle.vim)  
-`$ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle`  
+Vundle (https://github.com/VundleVim/Vundle.vim)
+`$git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
 Launch vim and run `:PluginInstall`
