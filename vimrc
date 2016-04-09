@@ -24,7 +24,6 @@ Plugin 'vim-scripts/LustyExplorer'
 
 Plugin 'scrooloose/syntastic'
 
-Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'fugalh/desert.vim'
 Plugin 'croaker/mustang-vim'
@@ -82,6 +81,9 @@ let g:NERDTreeMapOpenVSplit='v'
 
 " Set 7 lines to the cursor - when moving vertically using j/k
 set so=7
+
+" Automatically resize splits if window size changes
+" autocmd VimResized * wincmd =
 
 " Vim split navigation
 nnoremap <C-J> <C-W><C-J>
