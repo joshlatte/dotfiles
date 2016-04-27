@@ -1,4 +1,4 @@
-export PATH=$PATH:/Applications/Postgres.app/Contents/MacOS/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
 export PGHOST=localhost
 
 alias gco='git co'
@@ -6,6 +6,8 @@ alias gci='git ci'
 alias grb='git rb'
 
 alias ll='ls -la'
+
+alias gbr="git for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
 
 # Git branch in prompt.
 parse_git_branch() {
@@ -20,3 +22,6 @@ if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
 export PATH="$HOME/.rbenv/bin:$PATH"
+
+#export PATH="./bin:$PATH"
+#export PATH="/usr/local/sbin:$PATH"
