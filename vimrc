@@ -4,7 +4,7 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-dispatch'
@@ -84,6 +84,9 @@ let g:NERDTreeMapOpenVSplit='v'
 
 " Set 7 lines to the cursor - when moving vertically using j/k
 set so=7
+
+" Automatically resize splits if window size changes
+" autocmd VimResized * wincmd =
 
 " Vim split navigation
 nnoremap <C-J> <C-W><C-J>

@@ -13,6 +13,6 @@
 	ui = true
 [core]
 	excludesfile = /Users/joshmanuel/.gitignore
-	editor = mvim -f
+	editor = /usr/bin/vim
 [push]
 	default = simple
