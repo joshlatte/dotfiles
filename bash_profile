@@ -7,7 +7,7 @@ alias grb='git rb'
 
 alias ll='ls -la'
 
-alias gbr="git for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
+alias gbr='git br'
 
 # Git branch in prompt.
 parse_git_branch() {

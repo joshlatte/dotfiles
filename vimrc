@@ -13,6 +13,7 @@ Plugin 'wesQ3/vim-windowswap'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 
+Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'slim-template/vim-slim.git'
 Plugin 'kchmck/vim-coffee-script'
@@ -24,9 +25,11 @@ Plugin 'vim-scripts/LustyExplorer'
 
 Plugin 'scrooloose/syntastic'
 
+" Color schemes
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'fugalh/desert.vim'
 Plugin 'croaker/mustang-vim'
+Plugin 'morhetz/gruvbox'
 
 Plugin 'OmniSharp/omnisharp-vim'
 " Plugin 'Valloric/YouCompleteMe'
@@ -86,7 +89,7 @@ let g:NERDTreeMapOpenVSplit='v'
 set so=7
 
 " Automatically resize splits if window size changes
-" autocmd VimResized * wincmd =
+autocmd VimResized * wincmd =
 
 " Vim split navigation
 nnoremap <C-J> <C-W><C-J>
@@ -95,19 +98,22 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " Spaces / tabs settings
-set expandtab
-set shiftwidth=2
 set tabstop=2
 set softtabstop=2
+set shiftwidth=2
+set expandtab
 
 " Colorscheme desert || solarized || mustang
 syntax enable
-let g:solarized_termcolors=256
-colorscheme desert
 set background=dark
+let g:solarized_termcolors=256
+let g:gruvbox_termcolors=256
+let g:gruvbox_contrast_light='medium'
+let g:gruvbox_contrast_dark='hard'
+colorscheme gruvbox
 
 if has('gui_running')
-  set transparency=20
+  set transparency=10
 endif
 
 " Move a line of text using ALT+[jk] or Comamnd+[jk] on mac
@@ -125,6 +131,10 @@ endif
 
 " Clean whitespace
 nnoremap <leader>w :StripWhitespace<cr>
+
+"Indent Guides
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_guide_size = 1
 
 "Reset spaces & expand tabs
 nnoremap <leader>ts :set tabstop=2 shiftwidth=2 expandtab<cr>
