@@ -112,7 +112,7 @@ let g:gruvbox_contrast_light='medium'
 let g:gruvbox_contrast_dark='hard'
 colorscheme gruvbox
 
-if has('gui_running')
+if has("mac") && has('gui_running')
   set transparency=10
 endif
 
@@ -122,7 +122,7 @@ nmap <M-k> mz:m-2<cr>`z
 vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
 vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
 
-if has("mac") || has("macunix")
+if has("mac")|| has("macunix")
   nmap <D-j> <M-j>
   nmap <D-k> <M-k>
   vmap <D-j> <M-j>
