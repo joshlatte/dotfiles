@@ -10,7 +10,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-dispatch'
 
 Plugin 'wesQ3/vim-windowswap'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 
 Plugin 'nathanaelkane/vim-indent-guides'
@@ -135,6 +135,12 @@ nnoremap <leader>w :StripWhitespace<cr>
 "Indent Guides
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_guide_size = 1
+
+" Ctrl-p custom ignore
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
 "Reset spaces & expand tabs
 nnoremap <leader>ts :set tabstop=2 shiftwidth=2 expandtab<cr>
