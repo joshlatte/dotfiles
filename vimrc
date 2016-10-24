@@ -67,6 +67,15 @@ set number
 " Show matching brackets when cursor is over
 set showmatch
 
+" Tabs
+set showtabline=1
+nnoremap <leader>T :tabnew<cr>
+nnoremap <leader>tq :tabclose<cr>
+nnoremap <leader>tt :tabs<cr>
+
+" Close window
+nnoremap <leader>wq :q<cr>
+
 " Search
 set hlsearch " highlight search results
 set ignorecase " case insensitive
