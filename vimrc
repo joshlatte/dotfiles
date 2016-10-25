@@ -111,9 +111,10 @@ let g:gruvbox_termcolors=256
 let g:gruvbox_contrast_light='medium'
 let g:gruvbox_contrast_dark='hard'
 colorscheme gruvbox
+hi Normal ctermbg=none
 
 if has("mac") && has('gui_running')
-  set transparency=10
+  " set transparency=10
 endif
 
 " Move a line of text using ALT+[jk] or Comamnd+[jk] on mac
