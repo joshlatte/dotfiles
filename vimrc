@@ -76,6 +76,9 @@ nnoremap <leader>tt :tabs<cr>
 " Close window
 nnoremap <leader>wq :q<cr>
 
+" Hilight line
+set cursorline
+
 " Search
 set hlsearch " highlight search results
 set ignorecase " case insensitive
