@@ -19,6 +19,7 @@ Plugin 'slim-template/vim-slim.git'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 Plugin 'groenewege/vim-less'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'vim-scripts/LustyExplorer'
@@ -77,7 +78,7 @@ nnoremap <leader>tt :tabs<cr>
 nnoremap <leader>wq :q<cr>
 
 " Hilight line
-set cursorline
+"set cursorline
 
 " Search
 set hlsearch " highlight search results
@@ -126,7 +127,7 @@ colorscheme gruvbox
 hi Normal ctermbg=none
 
 if has("mac") && has('gui_running')
-  " set transparency=10
+  set transparency=10
 endif
 
 " Move a line of text using ALT+[jk] or Comamnd+[jk] on mac

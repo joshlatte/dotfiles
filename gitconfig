@@ -12,7 +12,7 @@
 	ui = auto
 	ui = true
 [core]
-	excludesfile = /Users/joshmanuel/.gitignore
+	excludesfile = ~/.gitignore
 	editor = mvim -f
 [push]
 	default = simple

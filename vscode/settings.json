@@ -1,0 +1,17 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "window.zoomLevel": 0,
+    "workbench.statusBar.visible": true,
+    "editor.tabSize": 2,
+
+    // Configure glob patterns for excluding files and folders in searches. Inherits all glob patterns from the files.exclude setting.
+    "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/tmp": true,
+    "**/.git": true
+    },
+
+    // Controls if opened editors show as preview. Preview editors are reused until they are kept (e.g. via double click or editing).
+    "workbench.editor.enablePreview": false
+}
