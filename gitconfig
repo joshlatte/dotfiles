@@ -1,6 +1,7 @@
 [user]
 	name = Josh M
 	email = josh.manuel@bydeluxe.com
+	signingkey = E79FF51A5DB60053
 
 [alias]
   co = checkout
@@ -16,3 +17,7 @@
 	editor = mvim -f
 [push]
 	default = simple
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
