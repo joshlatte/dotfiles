@@ -102,10 +102,10 @@ set so=7
 autocmd VimResized * wincmd =
 
 " Vim split navigation
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+nnoremap <C-j> <C-W><C-J>
+nnoremap <C-k> <C-W><C-K>
+nnoremap <C-l> <C-W><C-L>
+nnoremap <C-h> <C-W><C-H>
 
 " Spaces / tabs settings
 set tabstop=2
@@ -114,13 +114,22 @@ set shiftwidth=2
 set expandtab
 
 " Colorscheme desert || solarized || mustang
+
+"""""" TESTING """"""
+" Enable True Color Terminal
+set t_8f=[38;2;%lu;%lu;%lum
+set t_8b=[48;2;%lu;%lu;%lum
+set termguicolors
+
+
+"""""""""
+colorscheme gruvbox
 syntax enable
 set background=dark
-let g:solarized_termcolors=256
-let g:gruvbox_termcolors=256
+" let g:solarized_termcolors=256
+" let g:gruvbox_termcolors=256
 let g:gruvbox_contrast_light='medium'
 let g:gruvbox_contrast_dark='hard'
-colorscheme gruvbox
 hi Normal ctermbg=none
 
 if has("mac") && has('gui_running')
@@ -128,10 +137,10 @@ if has("mac") && has('gui_running')
 endif
 
 " Move a line of text using ALT+[jk] or Comamnd+[jk] on mac
-nmap <M-j> mz:m+<cr>`z
-nmap <M-k> mz:m-2<cr>`z
-vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
-vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
+nmap <C-j> mz:m+<cr>`z
+nmap <C-k> mz:m-2<cr>`z
+vmap <C-j> :m'>+<cr>`<my`>mzgv`yo`z
+vmap <C-k> :m'<-2<cr>`>my`<mzgv`yo`z
 
 if has("mac")|| has("macunix")
   nmap <D-j> <M-j>
@@ -139,6 +148,9 @@ if has("mac")|| has("macunix")
   vmap <D-j> <M-j>
   vmap <D-k> <M-k>
 endif
+
+" Remap join line with leader
+vmap <leader>j :j<cr>
 
 " Clean whitespace
 nnoremap <leader>w :StripWhitespace<cr>
