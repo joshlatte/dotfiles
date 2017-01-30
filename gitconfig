@@ -1,6 +1,7 @@
 [user]
 	name = Josh Manuel
 	email = joshlatte@gmail.com
+	signingkey = E79FF51A5DB60053
 
 [alias]
   co = checkout
@@ -13,6 +14,10 @@
 	ui = true
 [core]
 	excludesfile = ~/.gitignore
-	editor = mvim -f
+	editor = vim
 [push]
 	default = simple
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true

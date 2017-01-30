@@ -9,10 +9,15 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-dispatch'
 
+" Nav and Control
 Plugin 'wesQ3/vim-windowswap'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'vim-scripts/LustyExplorer'
+Plugin 'christoomey/vim-tmux-navigator'
 
+" Syntax and style
+Plugin 'scrooloose/syntastic'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'slim-template/vim-slim.git'
@@ -22,23 +27,38 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'groenewege/vim-less'
 Plugin 'mustache/vim-mustache-handlebars'
-Plugin 'vim-scripts/LustyExplorer'
-
-Plugin 'scrooloose/syntastic'
+Plugin 'othree/javascript-libraries-syntax'
 
 " Color schemes
+Plugin 'morhetz/gruvbox'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'fugalh/desert.vim'
 Plugin 'croaker/mustang-vim'
-Plugin 'morhetz/gruvbox'
-
-Plugin 'OmniSharp/omnisharp-vim'
-" Plugin 'Valloric/YouCompleteMe'
-
-Plugin 'christoomey/vim-tmux-navigator'
 
 call vundle#end()
 filetype plugin indent on
+
+" enable 256 colors
+set t_Co=256
+
+" Colorscheme gruvbox || desert || solarized || mustang
+
+" Enable True Color Terminal
+syntax enable
+"set t_8f=[38;2;%lu;%lu;%lum
+"set t_8b=[48;2;%lu;%lu;%lum
+" let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+" let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+colorscheme gruvbox
+set background=dark
+highlight Normal ctermbg=NONE guibg=NONE
+highlight NonText ctermbg=NONE guibg=NONE
+set termguicolors
+let g:solarized_termcolors=256
+let g:gruvbox_termcolors=256
+let g:gruvbox_contrast_light='medium'
+let g:gruvbox_contrast_dark='hard'
+" hi Normal ctermbg=none
 
 " Remap leader
 let mapleader = ","
@@ -78,13 +98,14 @@ nnoremap <leader>tt :tabs<cr>
 nnoremap <leader>wq :q<cr>
 
 " Hilight line
-"set cursorline
+" set cursorline
 
 " Search
 set hlsearch " highlight search results
 set ignorecase " case insensitive
 set smartcase " case sensitive if using mixed case
 set incsearch " show search matches as inputted
+
 " clears search with leader (,)/
 nmap <silent> <leader>/ :nohlsearch<CR>
 
@@ -97,7 +118,6 @@ map <C-n> :NERDTreeToggle<CR>
 let g:NERDTreeMapOpenSplit='s'
 let g:NERDTreeMapOpenVSplit='v'
 
-
 " Set 7 lines to the cursor - when moving vertically using j/k
 set so=7
 
@@ -105,10 +125,10 @@ set so=7
 autocmd VimResized * wincmd =
 
 " Vim split navigation
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+nnoremap <C-j> <C-W><C-J>
+nnoremap <C-k> <C-W><C-K>
+nnoremap <C-l> <C-W><C-L>
+nnoremap <C-h> <C-W><C-H>
 
 " Spaces / tabs settings
 set tabstop=2
@@ -116,25 +136,15 @@ set softtabstop=2
 set shiftwidth=2
 set expandtab
 
-" Colorscheme desert || solarized || mustang
-syntax enable
-set background=dark
-let g:solarized_termcolors=256
-let g:gruvbox_termcolors=256
-let g:gruvbox_contrast_light='medium'
-let g:gruvbox_contrast_dark='hard'
-colorscheme gruvbox
-hi Normal ctermbg=none
-
 if has("mac") && has('gui_running')
   set transparency=10
 endif
 
 " Move a line of text using ALT+[jk] or Comamnd+[jk] on mac
-nmap <M-j> mz:m+<cr>`z
-nmap <M-k> mz:m-2<cr>`z
-vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
-vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
+nmap <S-j> mz:m+<cr>`z
+nmap <S-k> mz:m-2<cr>`z
+vmap <S-j> :m'>+<cr>`<my`>mzgv`yo`z
+vmap <S-k> :m'<-2<cr>`>my`<mzgv`yo`z
 
 if has("mac")|| has("macunix")
   nmap <D-j> <M-j>
@@ -143,29 +153,34 @@ if has("mac")|| has("macunix")
   vmap <D-k> <M-k>
 endif
 
+" Remap join line with leader
+vmap <leader>j :j<cr>
+
 " Clean whitespace
 nnoremap <leader>w :StripWhitespace<cr>
 
-"Indent Guides
+" Indent Guides
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_guide_size = 1
 
 " Ctrl-p custom ignore
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+set wildignore+=*/tmp/*,*/node_modules/*,*/lib/*,*/bin/*,*/vendor/*,*.so,*.swp,*.zip     " MacOSX/Linux
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
-"Reset spaces & expand tabs
+" JSX syntax highlighting for .js files
+let g:jsx_ext_required = 0
+
+" Syntastic ESLint setting
+let g:syntastic_javascript_checkers = ['eslint']
+
+" JS libraries to syntax highlight
+let g:used_javascript_libs = 'underscore,react,flux,jquery'
+
+" Reset spaces & expand tabs
 nnoremap <leader>ts :set tabstop=2 shiftwidth=2 expandtab<cr>
 nnoremap <leader>rt :retab<cr>
-
-" Omnisharp
-" (Experimental - uses vim-dispatch or vimproc plugin) - Start the omnisharp server for the current solution
-let g:syntastic_cs_checkers = ['syntax', 'semantic', 'issues']
-
-" Whitelist only .cs files for YouCompleteMe
-let g:ycm_filetype_whitelist = { 'cs': 1 }
 
 " Move the preview window (code documentation) to the bottom of the screen, so it doesn't move the code!
 set splitbelow
@@ -173,23 +188,3 @@ set splitbelow
 nnoremap <leader>w :StripWhitespace<cr>
 nnoremap <leader>ts :set tabstop=2 shiftwidth=2 expandtab<cr>
 nnoremap <leader>rt :retab<cr>
-
-nnoremap <leader>ss :OmniSharpStartServer<cr>
-nnoremap <leader>sp :OmniSharpStopServer<cr>
-
-" Force OmniSharp to reload the solution. Useful when switching branches etc.
-nnoremap <leader>rl :OmniSharpReloadSolution<cr>
-nnoremap <leader>cf :OmniSharpCodeFormat<cr>
-
-" Add syntax highlighting for types and interfaces
-nnoremap <leader>th :OmniSharpHighlightTypes<cr>
-
-augroup omnisharp_commands
-  autocmd!
-
-  " Set autocomplete function to OmniSharp (if not using YouCompleteMe completion plugin)
-  " autocmd FileType cs setlocal omnifunc=OmniSharp#Complete
-
-  " Asyncronous build with vim-dispatch
-  autocmd FileType cs nnoremap <leader>b :wa!<cr>:OmniSharpBuildAsync<cr>
-augroup END
