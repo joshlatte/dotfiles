@@ -49,8 +49,8 @@ set t_Co=256
 " let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 " let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 colorscheme gruvbox
-set background=dark
 syntax enable
+set background=dark
 highlight Normal ctermbg=NONE guibg=NONE
 highlight NonText ctermbg=NONE guibg=NONE
 " set termguicolors
