@@ -27,7 +27,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'groenewege/vim-less'
 Plugin 'mustache/vim-mustache-handlebars'
-Plugin 'othree/javascript-libraries-syntax'
+Plugin 'othree/javascript-libraries-syntax.vim'
 
 " Color schemes
 Plugin 'morhetz/gruvbox'
@@ -50,9 +50,9 @@ set t_Co=256
 " let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 colorscheme gruvbox
 set background=dark
+syntax enable
 highlight Normal ctermbg=NONE guibg=NONE
 highlight NonText ctermbg=NONE guibg=NONE
-syntax enable
 " set termguicolors
 let g:solarized_termcolors=256
 let g:gruvbox_termcolors=256
