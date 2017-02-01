@@ -63,6 +63,9 @@ highlight Normal ctermbg=NONE guibg=NONE
 highlight NonText ctermbg=NONE guibg=NONE
 " hi Normal ctermbg=none
 
+" Fix backspace for insert mode
+set backspace=indent,eol,start
+
 " Remap leader
 let mapleader = ","
 
