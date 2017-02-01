@@ -15,6 +15,8 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-scripts/LustyExplorer'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 " Syntax and style
 Plugin 'scrooloose/syntastic'
@@ -48,16 +50,17 @@ set t_Co=256
 "set t_8b=[48;2;%lu;%lu;%lum
 " let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 " let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-colorscheme gruvbox
 set background=dark
-syntax enable
-highlight Normal ctermbg=NONE guibg=NONE
-highlight NonText ctermbg=NONE guibg=NONE
+
+colorscheme gruvbox
 " set termguicolors
 let g:solarized_termcolors=256
 let g:gruvbox_termcolors=256
 let g:gruvbox_contrast_light='medium'
 let g:gruvbox_contrast_dark='hard'
+syntax enable
+highlight Normal ctermbg=NONE guibg=NONE
+highlight NonText ctermbg=NONE guibg=NONE
 " hi Normal ctermbg=none
 
 " Remap leader
@@ -159,6 +162,7 @@ vmap <leader>j :j<cr>
 " Clean whitespace
 nnoremap <leader>w :StripWhitespace<cr>
 
+" ============== Plugin Settings ==============
 " Indent Guides
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_guide_size = 1
