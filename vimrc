@@ -15,8 +15,6 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-scripts/LustyExplorer'
 Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
 
 " Syntax and style
 Plugin 'scrooloose/syntastic'
@@ -72,6 +70,9 @@ let mapleader = ","
 " Automatically reload file if timestamps change
 set autoread
 
+" Redraw screen
+nnoremap <leader>rd :redraw!<cr>
+
 " Set hidden
 set hid
 
@@ -93,6 +94,20 @@ set number
 
 " Show matching brackets when cursor is over
 set showmatch
+
+" Statusline config
+set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+
+" Fugitive git bindings
+nnoremap <leader>ga :Git add %:p<cr><cr>
+nnoremap <leader>gs :Gstatus<cr>
+nnoremap <leader>gc :Gcommit -v -q %:p<cr>
+nnoremap <leader>gd :Gdiff<cr>
+nnoremap <leader>ge :Gedit<cr>
+nnoremap <leader>gr :Gread<cr>
+nnoremap <leader>gw :Gwrite<cr><cr>
+nnoremap <leader>gb :Git branch<Space>
+nnoremap <leader>go :Git checkout<Space>
 
 " Tabs
 set showtabline=1
@@ -146,6 +161,9 @@ if has("mac") && has('gui_running')
   set transparency=10
 endif
 
+" System Clipboard
+set clipboard=unnamed
+
 " Move a line of text using ALT+[jk] or Comamnd+[jk] on mac
 nmap <S-j> mz:m+<cr>`z
 nmap <S-k> mz:m-2<cr>`z
@@ -192,6 +210,3 @@ nnoremap <leader>rt :retab<cr>
 " Move the preview window (code documentation) to the bottom of the screen, so it doesn't move the code!
 set splitbelow
 
-nnoremap <leader>w :StripWhitespace<cr>
-nnoremap <leader>ts :set tabstop=2 shiftwidth=2 expandtab<cr>
-nnoremap <leader>rt :retab<cr>
