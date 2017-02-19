@@ -3,6 +3,9 @@ tags
 gems.tags
 Procfile
 *.rdb
+*~
+*.swp
+*.swo
 /.vagrant
 /.vscode/
 !.vscode/settings.json
