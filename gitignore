@@ -3,9 +3,12 @@ tags
 gems.tags
 Procfile
 *.rdb
+*~
+*.swp
+*.swo
 /.vagrant
 /.vscode/
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
-yarn.lock
+**/yarn.lock
