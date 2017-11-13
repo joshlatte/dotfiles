@@ -8,6 +8,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-dispatch'
+Plugin 'mileszs/ack.vim'
 
 " Nav and Control
 Plugin 'wesQ3/vim-windowswap'
@@ -17,7 +18,7 @@ Plugin 'vim-scripts/LustyExplorer'
 Plugin 'christoomey/vim-tmux-navigator'
 
 " Syntax and style
-Plugin 'scrooloose/syntastic'
+"Plugin 'scrooloose/syntastic'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'slim-template/vim-slim.git'
@@ -27,7 +28,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'groenewege/vim-less'
 Plugin 'mustache/vim-mustache-handlebars'
-Plugin 'othree/javascript-libraries-syntax.vim'
+"Plugin 'othree/javascript-libraries-syntax.vim'
 
 " Color schemes
 Plugin 'morhetz/gruvbox'
@@ -38,28 +39,23 @@ Plugin 'croaker/mustang-vim'
 call vundle#end()
 filetype plugin indent on
 
+" Colorscheme gruvbox || desert || solarized || mustang
+if !exists("g:syntax_on")
+  syntax enable
+endif
+
+set background=dark
+
 " enable 256 colors
 set t_Co=256
 
-" Colorscheme gruvbox || desert || solarized || mustang
-
-" Enable True Color Terminal
-"set t_8f=[38;2;%lu;%lu;%lum
-"set t_8b=[48;2;%lu;%lu;%lum
-" let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-" let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-set background=dark
-
 colorscheme gruvbox
 " set termguicolors
-let g:solarized_termcolors=256
 let g:gruvbox_termcolors=256
 let g:gruvbox_contrast_light='medium'
 let g:gruvbox_contrast_dark='hard'
-syntax enable
-highlight Normal ctermbg=NONE guibg=NONE
-highlight NonText ctermbg=NONE guibg=NONE
-" hi Normal ctermbg=none
+highlight Normal ctermbg=NONE guibg=Black
+highlight NonText ctermbg=NONE
 
 " Fix backspace for insert mode
 set backspace=indent,eol,start
@@ -158,7 +154,7 @@ set shiftwidth=2
 set expandtab
 
 if has("mac") && has('gui_running')
-  set transparency=10
+  set transparency=20
 endif
 
 " System Clipboard
@@ -198,9 +194,9 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:jsx_ext_required = 0
 
 " Syntastic ESLint setting
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 
 "let g:syntastic_javascript_checkers = ['eslint']
 "let g:syntastic_always_populate_loc_list = 1
@@ -209,7 +205,7 @@ set statusline+=%*
 "let g:syntastic_check_on_wq = 0
 
 " JS libraries to syntax highlight
-let g:used_javascript_libs = 'underscore,react,flux,jquery'
+"let g:used_javascript_libs = 'underscore,react,flux,jquery'
 
 " Reset spaces & expand tabs
 nnoremap <leader>ts :set tabstop=2 shiftwidth=2 expandtab<cr>
@@ -217,4 +213,3 @@ nnoremap <leader>rt :retab<cr>
 
 " Move the preview window (code documentation) to the bottom of the screen, so it doesn't move the code!
 set splitbelow
-
