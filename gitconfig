@@ -18,10 +18,11 @@
 [push]
 	default = simple
 [diff]
-	tool = default-difftool
-[difftool "default-difftool"]
-	cmd = vim --diff $LOCAL $REMOTE
+	tool = vscode
+[difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE
 [filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
 	required = true
+	process = git-lfs filter-process
