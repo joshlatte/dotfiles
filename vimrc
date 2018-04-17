@@ -1,11 +1,16 @@
+" check syntax
+" help syntime
 set nocompatible
 filetype off
+set ttyfast
+set lazyredraw
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 
+Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-dispatch'
 Plugin 'mileszs/ack.vim'
@@ -38,6 +43,8 @@ Plugin 'croaker/mustang-vim'
 
 call vundle#end()
 filetype plugin indent on
+
+set re=1
 
 " Colorscheme gruvbox || desert || solarized || mustang
 if !exists("g:syntax_on")
