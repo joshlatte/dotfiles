@@ -23,16 +23,16 @@ Plugin 'vim-scripts/LustyExplorer'
 Plugin 'christoomey/vim-tmux-navigator'
 
 " Syntax and style
-"Plugin 'scrooloose/syntastic'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'slim-template/vim-slim.git'
 Plugin 'kchmck/vim-coffee-script'
-Plugin 'digitaltoad/vim-jade'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'groenewege/vim-less'
-Plugin 'mustache/vim-mustache-handlebars'
+"Plugin 'scrooloose/syntastic'
+"Plugin 'mustache/vim-mustache-handlebars'
+"Plugin 'digitaltoad/vim-jade'
 "Plugin 'othree/javascript-libraries-syntax.vim'
 
 " Color schemes
