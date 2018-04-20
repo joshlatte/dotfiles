@@ -54,13 +54,14 @@ endif
 set background=dark
 
 " enable 256 colors
-set t_Co=256
+"set t_Co=256
 
-colorscheme gruvbox
-" set termguicolors
+"set termguicolors
+let g:solarized_termcolors=256
 let g:gruvbox_termcolors=256
 let g:gruvbox_contrast_light='medium'
 let g:gruvbox_contrast_dark='hard'
+colorscheme gruvbox
 highlight Normal ctermbg=NONE guibg=Black
 highlight NonText ctermbg=NONE
 
