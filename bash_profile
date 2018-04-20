@@ -1,34 +1,3 @@
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
-export PGHOST=localhost
-
-alias gco='git co'
-alias gci='git ci'
-alias grb='git rb'
-
-alias ll='ls -la'
-
-alias gbr='git br'
-
-# Git branch in prompt.
-parse_git_branch() {
-    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-}
-export PS1="\u@\h \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
-export PATH=/usr/local/bin:$PATH
-
-eval "$(rbenv init -)"
-
-if [ -f ~/.git-completion.bash ]; then
-  . ~/.git-completion.bash
+if [ -f ~/.bashrc ]; then
+   source ~/.bashrc
 fi
-
-# Install with homebrew (brew install bash-completion)
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-. $(brew --prefix)/etc/bash_completion
-fi
-
-export PATH="$HOME/.rbenv/bin:$PATH"
-
-#export PATH="./bin:$PATH"
-#export PATH="/usr/local/sbin:$PATH"
-export PATH="/usr/local/opt/openssl/bin:$PATH"
