@@ -23,13 +23,14 @@ Plugin 'vim-scripts/LustyExplorer'
 Plugin 'christoomey/vim-tmux-navigator'
 
 " Syntax and style
+Plugin 'sheerun/vim-polyglot'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'slim-template/vim-slim.git'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
-Plugin 'groenewege/vim-less'
+"Plugin 'slim-template/vim-slim.git'
+"Plugin 'kchmck/vim-coffee-script'
+"Plugin 'pangloss/vim-javascript'
+"Plugin 'mxw/vim-jsx'
+"Plugin 'groenewege/vim-less'
 "Plugin 'scrooloose/syntastic'
 "Plugin 'mustache/vim-mustache-handlebars'
 "Plugin 'digitaltoad/vim-jade'
@@ -123,7 +124,7 @@ nnoremap <leader>tt :tabs<cr>
 nnoremap <leader>wq :q<cr>
 
 " Hilight line
-" set cursorline
+"set cursorline
 
 " Search
 set hlsearch " highlight search results
