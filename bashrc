@@ -14,6 +14,8 @@ alias gbr="git for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %
 
 alias ll='ls -la'
 
+alias dc='docker-compose'
+
 # Git branch in prompt.
 parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
