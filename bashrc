@@ -34,3 +34,5 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
 fi
 
 source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
