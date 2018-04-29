@@ -53,17 +53,19 @@ if !exists("g:syntax_on")
   syntax enable
 endif
 
-set background=light
+set background=dark
 
 " enable 256 colors
 "set t_Co=256
 
 "set termguicolors
-colorscheme gruvbox
-let g:solarized_termcolors=256
-let g:gruvbox_termcolors=256
+"let g:solarized_termcolors=256
+"let g:gruvbox_termcolors=256
 let g:gruvbox_contrast_light='soft'
-"let g:gruvbox_contrast_dark='hard'
+let g:gruvbox_contrast_dark='hard'
+
+colorscheme gruvbox
+
 highlight Normal ctermbg=NONE guibg=Black
 highlight NonText ctermbg=NONE
 
