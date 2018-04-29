@@ -5,6 +5,7 @@ filetype off
 set ttyfast
 set lazyredraw
 
+set rtp+=/usr/local/opt/fzf
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
