@@ -1,17 +1,36 @@
 // Place your settings in this file to overwrite the default settings
 {
+    "editor.fontSize": 12,
     "window.zoomLevel": 0,
-    "workbench.statusBar.visible": true,
+    "workbench.colorTheme": "Solarized Light",
+    "window.title": "${rootPath}${separator}${activeEditorMedium}",
     "editor.tabSize": 2,
-
-    // Configure glob patterns for excluding files and folders in searches. Inherits all glob patterns from the files.exclude setting.
-    "search.exclude": {
-    "**/node_modules": true,
-    "**/bower_components": true,
-    "**/tmp": true,
-    "**/.git": true
+    "editor.formatOnPaste": true,
+    "diffEditor.renderSideBySide": false,
+    "files.insertFinalNewline": true,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "tmp/": true
     },
-
-    // Controls if opened editors show as preview. Preview editors are reused until they are kept (e.g. via double click or editing).
-    "workbench.editor.enablePreview": false
+    "gitlens.advanced.messages": {
+        "suppressCommitHasNoPreviousCommitWarning": false,
+        "suppressCommitNotFoundWarning": false,
+        "suppressFileNotUnderSourceControlWarning": false,
+        "suppressGitVersionWarning": false,
+        "suppressLineUncommittedWarning": false,
+        "suppressNoRepositoryWarning": false,
+        "suppressResultsExplorerNotice": false,
+        "suppressShowKeyBindingsNotice": true,
+        "suppressUpdateNotice": true,
+        "suppressWelcomeNotice": false
+    },
+    "git.autofetch": true,
+    "gitlens.keymap": "alternate",
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.minimap.enabled": false,
+    "vim.disableExtension": true
 }
