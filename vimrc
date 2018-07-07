@@ -27,6 +27,7 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'martinda/Jenkinsfile-vim-syntax'
 Plugin 'ekalinin/Dockerfile.vim'
 "Plugin 'slim-template/vim-slim.git'
 "Plugin 'kchmck/vim-coffee-script'
@@ -198,7 +199,7 @@ let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_guide_size = 1
 
 " Ctrl-p custom ignore
-set wildignore+=*/tmp/*,*/node_modules/*,*/bin/*,*/vendor/*,*.so,*.swp,*.zip     " MacOSX/Linux
+set wildignore+=*/tmp/*,*/node_modules/*,*/bin/*,*/vendor/*,*.so,*.swp,*.zip,*/jenkins_home/*     " MacOSX/Linux
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
