@@ -185,7 +185,7 @@ vmap <leader>j :j<cr>
 nnoremap <leader>w :StripWhitespace<cr>
 
 " ============== Plugin Settings ==============
-" ag
+" Silver searcher
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " Indent Guides
