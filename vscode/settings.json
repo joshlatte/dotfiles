@@ -43,7 +43,7 @@
     "workbench.iconTheme": "material-icon-theme",
     "material-icon-theme.showUpdateMessage": false,
     "explorer.autoReveal": false,
-    "workbench.colorTheme": "Atom One Light",
+    "workbench.colorTheme": "Solarized Light",
     "editor.multiCursorModifier": "ctrlCmd",
     "gitlens.advanced.messages": {
       "suppressCommitHasNoPreviousCommitWarning": false,
@@ -67,5 +67,9 @@
     "editor.minimap.enabled": false,
     "files.trimFinalNewlines": true,
     "editor.formatOnPaste": true,
-    "explorer.confirmDelete": false
+    "explorer.confirmDelete": false,
+    "vim.disableExtension": true,
+    "ruby.intellisense": "rubyLocate",
+    "ruby.codeCompletion": "rcodetools",
+    "ruby.specCommand": "SKIP=1 rspec"
   }
