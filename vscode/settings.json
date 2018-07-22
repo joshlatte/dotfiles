@@ -71,5 +71,6 @@
     "vim.disableExtension": true,
     "ruby.intellisense": "rubyLocate",
     "ruby.codeCompletion": "rcodetools",
-    "ruby.specCommand": "SKIP=1 rspec"
+    "ruby.specCommand": "SKIP=1 rspec",
+    "telemetry.enableTelemetry": false
   }
