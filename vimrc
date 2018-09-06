@@ -193,6 +193,13 @@ vmap <leader>j :j<cr>
 nnoremap <leader>w :StripWhitespace<cr>
 
 " ============== Plugin Settings ==============
+" Silver Searcher (ag)
+let g:ackprg = 'ag --nogroup --nocolor --column'
+" Ack with open input
+nnoremap <leader>a :Ack!<Space>
+" Ack with selected word
+nnoremap <leader>A :Ack!<cr>
+
 " Indent Guides
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_guide_size = 1
