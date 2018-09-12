@@ -14,7 +14,10 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-dispatch'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-rails'
 Plugin 'mileszs/ack.vim'
+Plugin 'benmills/vimux'
 
 " Nav and Control
 Plugin 'wesQ3/vim-windowswap'
