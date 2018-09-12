@@ -29,10 +29,6 @@ if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
 
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
-fi
-
 source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
