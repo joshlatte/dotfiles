@@ -71,7 +71,7 @@
     "vim.disableExtension": true,
     "ruby.intellisense": "rubyLocate",
     "ruby.codeCompletion": "rcodetools",
-    "ruby.specCommand": "docker-compose run web rspec ",
     "telemetry.enableTelemetry": false,
     "vsicons.dontShowNewVersionMessage": true
+    "ruby.specCommand": "docker-compose run web rspec",
   }
