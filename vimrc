@@ -4,6 +4,7 @@ set nocompatible
 filetype off
 set ttyfast
 set lazyredraw
+set updatetime=750
 
 set rtp+=/usr/local/opt/fzf
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -15,9 +16,11 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-surround'
+Plugin 'thoughtbot/vim-rspec'
 Plugin 'tpope/vim-rails'
 Plugin 'mileszs/ack.vim'
 Plugin 'benmills/vimux'
+Plugin 'airblade/vim-gitgutter'
 
 " Nav and Control
 Plugin 'wesQ3/vim-windowswap'
@@ -27,6 +30,8 @@ Plugin 'vim-scripts/LustyExplorer'
 Plugin 'christoomey/vim-tmux-navigator'
 
 " Syntax and style
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'ntpeters/vim-better-whitespace'
@@ -194,6 +199,12 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 nnoremap <leader>a :Ack!<Space>
 " Ack with selected word
 nnoremap <leader>A :Ack!<cr>
+
+" Rspec with Dispatch
+let g:rspec_command = "Dispatch rspec {spec}"
+
+" Airline
+let g:airline_theme='gruvbox'
 
 " Indent Guides
 let g:indent_guides_enable_on_vim_startup = 1
