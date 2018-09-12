@@ -205,20 +205,6 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 " JSX syntax highlighting for .js files
 let g:jsx_ext_required = 0
 
-" Syntastic ESLint setting
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-
-"let g:syntastic_javascript_checkers = ['eslint']
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
-
-" JS libraries to syntax highlight
-"let g:used_javascript_libs = 'underscore,react,flux,jquery'
-
 " Reset spaces & expand tabs
 nnoremap <leader>ts :set tabstop=2 shiftwidth=2 expandtab<cr>
 nnoremap <leader>rt :retab<cr>
