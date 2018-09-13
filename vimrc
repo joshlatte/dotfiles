@@ -105,7 +105,8 @@ set number
 set showmatch
 
 " Statusline config
-set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+"set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+set statusline=%<%f\ %h%m%r%{FugitiveStatusline()}%=%-14.(%l,%c%V%)\ %P
 
 " Fugitive git bindings
 nnoremap <leader>ga :Git add %:p<cr><cr>
