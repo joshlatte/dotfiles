@@ -1,20 +1,18 @@
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+asdfexport PATH=$HOME/local/bin:$PATH
+
+export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$PATH"
-export PATH=$HOME/local/bin:$PATH
 
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
-export PGHOST=localhost
+alias dc='docker-compose'
 
+# aliases are in .gitconfig
 alias gco='git co'
 alias gci='git ci'
 alias grb='git rb'
-
-alias gbr="git for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
+alias gbr='git br'
 
 alias ll='ls -la'
-
-alias dc='docker-compose'
 
 # Git branch in prompt.
 parse_git_branch() {
