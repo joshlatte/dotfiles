@@ -72,6 +72,8 @@
     "ruby.intellisense": "rubyLocate",
     "ruby.codeCompletion": "rcodetools",
     "telemetry.enableTelemetry": false,
+    "breadcrumbs.enabled": true,
+    "editor.wordWrap": "on",
     "vsicons.dontShowNewVersionMessage": true,
-    "ruby.specCommand": "docker-compose run web rspec",
+    "ruby.specCommand": "docker-compose run web rspec"
   }
