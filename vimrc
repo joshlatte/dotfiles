@@ -202,7 +202,13 @@ nnoremap <leader>a :Ack!<Space>
 nnoremap <leader>A :Ack!<cr>
 
 " Rspec with Dispatch
-let g:rspec_command = "Dispatch rspec {spec}"
+let g:rspec_command = "Dispatch docker-compose run web rspec {spec}"
+
+" RSpec.vim mappings
+nnoremap <leader>rf :call RunCurrentSpecFile()<cr>
+nnoremap <leader>rl :call RunNearestSpec()<cr>
+nnoremap <leader>rp :call RunLastSpec()<cr>
+nnoremap <leader>rs :call RunAllSpecs()<cr>
 
 " Airline
 let g:airline_theme='gruvbox'
