@@ -43,7 +43,7 @@
     "workbench.iconTheme": "material-icon-theme",
     "material-icon-theme.showUpdateMessage": false,
     "explorer.autoReveal": false,
-    "workbench.colorTheme": "FlatUI Immersed",
+    "workbench.colorTheme": "Atom One Light",
     "editor.multiCursorModifier": "ctrlCmd",
     "gitlens.advanced.messages": {
       "suppressCommitHasNoPreviousCommitWarning": false,
@@ -72,6 +72,6 @@
     "ruby.intellisense": "rubyLocate",
     "ruby.codeCompletion": "rcodetools",
     "telemetry.enableTelemetry": false,
-    "vsicons.dontShowNewVersionMessage": true
+    "vsicons.dontShowNewVersionMessage": true,
     "ruby.specCommand": "docker-compose run web rspec",
   }
