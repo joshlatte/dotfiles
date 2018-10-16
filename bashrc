@@ -1,4 +1,4 @@
-asdfexport PATH=$HOME/local/bin:$PATH
+export PATH=$HOME/local/bin:$PATH
 
 export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
 export PATH="$HOME/.rbenv/bin:$PATH"
@@ -27,9 +27,10 @@ if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
 
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
-fi
+#uNCOMMENT IF OS X
+#if [ -f $(brew --prefix)/etc/bash_completion ]; then
+#  . $(brew --prefix)/etc/bash_completion
+#fi
 
 source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
 
