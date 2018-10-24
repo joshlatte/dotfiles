@@ -1,0 +1,15 @@
+Host vayatek.com
+  Hostname 138.197.219.221
+  IdentityFile ~/.ssh/id_rsa.vayatek
+  User josh
+
+Host deluxe
+  User git
+  HostName github.com
+  IdentityFile ~/.ssh/id_rsa.deluxe
+
+Host 192.168.87.* *.dirtdev
+StrictHostKeyChecking no
+UserKnownHostsFile=/dev/null
+User root
+LogLevel ERROR

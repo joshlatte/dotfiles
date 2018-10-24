@@ -2,7 +2,7 @@ GPG_TTY=$(tty)
 
 export GPG_TTY
 export PATH=$HOME/local/bin:$PATH
-export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$PATH"
 
@@ -29,9 +29,8 @@ fi
 
 [ -f ~/.git-completion.bash ] && . ~/.git-completion.bash
 
-if which brew > /dev/null; then
-  source $(brew --prefix)/etc/bash_completion
-fi
+# Installed with brew install bash-completion
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
 if [ -f "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh" ]; then
   source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
