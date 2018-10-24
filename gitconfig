@@ -1,7 +1,7 @@
 [user]
 	name = Josh Manuel
 	email = joshlatte@gmail.com
-	signingkey = E79FF51A5DB60053
+	signingkey = 7B9D032B43E15705
 
 [alias]
   co = checkout
@@ -26,3 +26,7 @@
 	smudge = git-lfs smudge -- %f
 	required = true
 	process = git-lfs filter-process
+[gpg]
+	program = gpg
+[commit]
+	gpgsign = true
