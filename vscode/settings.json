@@ -26,12 +26,6 @@
 
     // The default end of line character.
     "files.eol": "\n",
-
-    // Controls the font size in pixels.
-    "editor.fontSize": 11,
-
-    // Controls the font size in pixels of the terminal, this defaults to editor.fontSize's value.
-    "terminal.integrated.fontSize": 11,
     "diffEditor.renderSideBySide": false,
     "files.insertFinalNewline": true,
     "slack.teamToken": "xoxp-3645231051-4461487626-142060127526-94ae86e5e11a4f5229528be4c1645bfb",
@@ -75,5 +69,7 @@
     "breadcrumbs.enabled": true,
     "editor.wordWrap": "on",
     "vsicons.dontShowNewVersionMessage": true,
-    "ruby.specCommand": "docker-compose run web rspec"
+    "ruby.specCommand": "docker-compose run web rspec",
+    "gitlens.views.fileHistory.enabled": true,
+    "gitlens.views.lineHistory.enabled": true
   }
