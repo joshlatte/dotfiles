@@ -12,3 +12,4 @@ Procfile
 !.vscode/tasks.json
 !.vscode/launch.json
 **/yarn.lock
+.dump.txt
