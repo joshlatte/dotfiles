@@ -43,6 +43,7 @@ Plugin 'morhetz/gruvbox'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'fugalh/desert.vim'
 Plugin 'croaker/mustang-vim'
+Plugin 'NLKNguyen/papercolor-theme'
 
 call vundle#end()
 filetype plugin indent on
@@ -54,7 +55,7 @@ if !exists("g:syntax_on")
   syntax enable
 endif
 
-set background=dark
+set background=light
 
 " enable 256 colors
 "set t_Co=256
@@ -65,7 +66,8 @@ set background=dark
 let g:gruvbox_contrast_light='soft'
 let g:gruvbox_contrast_dark='hard'
 
-colorscheme gruvbox
+"colorscheme gruvbox
+colorscheme Papercolor
 
 highlight Normal ctermbg=NONE guibg=Black
 highlight NonText ctermbg=NONE
@@ -211,7 +213,8 @@ nnoremap <leader>rp :call RunLastSpec()<cr>
 nnoremap <leader>rs :call RunAllSpecs()<cr>
 
 " Airline
-let g:airline_theme='gruvbox'
+let g:airline_theme='papercolor'
+"let g:airline_theme='gruvbox'
 
 " Indent Guides
 let g:indent_guides_enable_on_vim_startup = 1
