@@ -37,6 +37,7 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'martinda/Jenkinsfile-vim-syntax'
 Plugin 'ekalinin/Dockerfile.vim'
+Plugin 'mattn/emmet-vim'
 
 " Color schemes
 Plugin 'morhetz/gruvbox'
@@ -55,7 +56,7 @@ if !exists("g:syntax_on")
   syntax enable
 endif
 
-set background=light
+set background=dark
 
 " enable 256 colors
 "set t_Co=256
@@ -66,11 +67,15 @@ set background=light
 let g:gruvbox_contrast_light='soft'
 let g:gruvbox_contrast_dark='hard'
 
-"colorscheme gruvbox
-colorscheme Papercolor
+colorscheme gruvbox
+"colorscheme PaperColor
 
 highlight Normal ctermbg=NONE guibg=Black
 highlight NonText ctermbg=NONE
+
+" Airline
+"let g:airline_theme='papercolor'
+let g:airline_theme='gruvbox'
 
 " Fix backspace for insert mode
 set backspace=indent,eol,start
@@ -212,9 +217,6 @@ nnoremap <leader>rl :call RunNearestSpec()<cr>
 nnoremap <leader>rp :call RunLastSpec()<cr>
 nnoremap <leader>rs :call RunAllSpecs()<cr>
 
-" Airline
-let g:airline_theme='papercolor'
-"let g:airline_theme='gruvbox'
 
 " Indent Guides
 let g:indent_guides_enable_on_vim_startup = 1
