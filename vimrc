@@ -152,9 +152,10 @@ set noswapfile
 set nobackup
 
 " NERDTree toggle = ctrl-n
-map <C-n> :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
 let g:NERDTreeMapOpenSplit='s'
 let g:NERDTreeMapOpenVSplit='v'
+map <silent> <C-n> :NERDTreeToggle<CR>
 
 " Set 7 lines to the cursor - when moving vertically using j/k
 set so=7
@@ -207,6 +208,9 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 nnoremap <leader>a :Ack!<Space>
 " Ack with selected word
 nnoremap <leader>A :Ack!<cr>
+
+nnoremap <leader>f :FZF<Space>
+nnoremap <leader>F :FZF<cr>
 
 " Rspec with Dispatch
 let g:rspec_command = "Dispatch docker-compose run web rspec {spec}"
