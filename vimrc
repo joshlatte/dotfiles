@@ -27,7 +27,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'wesQ3/vim-windowswap'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'vim-scripts/LustyExplorer'
+Plugin 'sjbach/lusty'
 Plugin 'christoomey/vim-tmux-navigator'
 
 " Syntax and style
@@ -210,8 +210,13 @@ nnoremap <leader>a :Ack!<Space>
 " Ack with selected word
 nnoremap <leader>A :Ack!<cr>
 
+" fzf.vim
 nnoremap <leader>f :FZF<Space>
 nnoremap <leader>F :FZF<cr>
+
+
+" Airline
+let g:airline#extensions#tabline#enabled = 1
 
 " Rspec with Dispatch
 let g:rspec_command = "Dispatch docker-compose run web rspec {spec}"
@@ -221,6 +226,9 @@ nnoremap <leader>rf :call RunCurrentSpecFile()<cr>
 nnoremap <leader>rl :call RunNearestSpec()<cr>
 nnoremap <leader>rp :call RunLastSpec()<cr>
 nnoremap <leader>rs :call RunAllSpecs()<cr>
+nmap ; :Buffers<CR>
+nmap <leader>t :Files<CR>
+nmap <leader>r :Tags<CR>
 
 
 " Indent Guides
