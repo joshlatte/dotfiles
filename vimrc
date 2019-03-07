@@ -19,6 +19,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'tpope/vim-rails'
 Plugin 'mileszs/ack.vim'
+Plugin 'junegunn/fzf.vim'
 Plugin 'benmills/vimux'
 Plugin 'airblade/vim-gitgutter'
 
