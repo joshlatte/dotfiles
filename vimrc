@@ -16,12 +16,14 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-unimpaired'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'tpope/vim-rails'
 Plugin 'mileszs/ack.vim'
 Plugin 'junegunn/fzf.vim'
 Plugin 'benmills/vimux'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'majutsushi/tagbar'
 
 " Nav and Control
 Plugin 'wesQ3/vim-windowswap'
@@ -39,6 +41,7 @@ Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'martinda/Jenkinsfile-vim-syntax'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'mattn/emmet-vim'
+Plugin 'w0rp/ale'
 
 " Color schemes
 Plugin 'morhetz/gruvbox'
@@ -217,6 +220,7 @@ nnoremap <leader>F :FZF<cr>
 
 " Airline
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#ale#enabled = 1
 
 " Rspec with Dispatch
 let g:rspec_command = "Dispatch docker-compose run web rspec {spec}"
@@ -229,7 +233,6 @@ nnoremap <leader>rs :call RunAllSpecs()<cr>
 nmap ; :Buffers<CR>
 nmap <leader>t :Files<CR>
 nmap <leader>r :Tags<CR>
-
 
 " Indent Guides
 let g:indent_guides_enable_on_vim_startup = 1
