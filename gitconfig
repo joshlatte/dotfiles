@@ -1,7 +1,7 @@
 [user]
-	name = Josh Manuel
-	email = joshlatte@gmail.com
-	signingkey = 7B9D032B43E15705
+  name = Josh Manuel
+  email = joshlatte@gmail.com
+  signingkey = 7B9D032B43E15705
 
 [alias]
   co = checkout
@@ -9,24 +9,24 @@
   rb = rebase
   br = for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
 [color]
-	ui = true
-	ui = auto
-	ui = true
+  ui = true
+  ui = auto
+  ui = true
 [core]
-	excludesfile = ~/.gitignore
-	editor = vim
+  excludesfile = ~/.gitignore
+  editor = vim
 [push]
-	default = simple
+  default = simple
 [diff]
-	tool = vscode
+  tool = vscode
 [difftool "vscode"]
-	cmd = code --wait --diff $LOCAL $REMOTE
+  cmd = code --wait --diff $LOCAL $REMOTE
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	required = true
-	process = git-lfs filter-process
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  required = true
+  process = git-lfs filter-process
 [gpg]
-	program = gpg
+  program = gpg
 [commit]
-	gpgsign = true
+  gpgsign = true
