@@ -223,7 +223,8 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#ale#enabled = 1
 
 " Rspec with Dispatch
-let g:rspec_command = "Dispatch docker-compose run web rspec {spec}"
+let g:rspec_command = "Dispatch rspec {spec}"
+" let g:rspec_command = "Dispatch docker-compose run web rspec {spec}"
 
 " RSpec.vim mappings
 nnoremap <leader>rf :call RunCurrentSpecFile()<cr>

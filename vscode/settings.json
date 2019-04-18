@@ -37,7 +37,7 @@
     "workbench.iconTheme": "material-icon-theme",
     "material-icon-theme.showUpdateMessage": false,
     "explorer.autoReveal": false,
-    "workbench.colorTheme": "Atom One Light",
+    "workbench.colorTheme": "FlatUI Immersed",
     "editor.multiCursorModifier": "ctrlCmd",
     "gitlens.advanced.messages": {
       "suppressCommitHasNoPreviousCommitWarning": false,
