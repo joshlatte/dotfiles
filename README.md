@@ -37,4 +37,10 @@ System setup
 
 5) Install rbenv
 * brew install rbenv
+
+6) Install rails
+* sudo gem install rails
+
+7) Install yarn + node
+* brew install yarn
 ```
