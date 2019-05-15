@@ -43,4 +43,10 @@ System setup
 
 7) Install yarn + node
 * brew install yarn
+
+8) Install Postgresql
+* brew install postgresql
+
+9) Install redis
+* brew install redis
 ```
