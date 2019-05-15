@@ -34,4 +34,7 @@ System setup
 
 4) Install gpg
 *  brew install gpg
+
+5) Install rbenv
+* brew install rbenv
 ```
