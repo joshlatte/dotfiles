@@ -1,7 +1,7 @@
 [user]
   name = Josh Manuel
   email = joshlatte@gmail.com
-  signingkey = 25AF8F6BF7746AA3
+  signingkey = 20C44E90299B9ABC
 
 [alias]
   co = checkout
