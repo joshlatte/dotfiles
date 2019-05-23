@@ -60,7 +60,7 @@ if !exists("g:syntax_on")
   syntax enable
 endif
 
-set background=dark
+set background=light
 
 " enable 256 colors
 "set t_Co=256
@@ -71,15 +71,15 @@ set background=dark
 let g:gruvbox_contrast_light='soft'
 let g:gruvbox_contrast_dark='hard'
 
-colorscheme gruvbox
-"colorscheme PaperColor
+"colorscheme gruvbox
+colorscheme PaperColor
 
 highlight Normal ctermbg=NONE guibg=Black
 highlight NonText ctermbg=NONE
 
 " Airline
-"let g:airline_theme='papercolor'
-let g:airline_theme='gruvbox'
+let g:airline_theme='papercolor'
+"let g:airline_theme='gruvbox'
 
 " Fix backspace for insert mode
 set backspace=indent,eol,start
