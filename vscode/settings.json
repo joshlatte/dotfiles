@@ -28,8 +28,6 @@
     "files.eol": "\n",
     "diffEditor.renderSideBySide": false,
     "files.insertFinalNewline": true,
-    "slack.teamToken": "xoxp-3645231051-4461487626-142060127526-94ae86e5e11a4f5229528be4c1645bfb",
-    "slack.username": "@josh.manuel",
     "zenMode.hideTabs": false,
     "terminal.integrated.shell.windows": "C:\\WINDOWS\\Sysnative\\bash.exe",
     "window.title": "${activeEditorLong}${separator}${rootName}",
@@ -56,7 +54,6 @@
     // Vim settings
     "vim.hlsearch": true,
     "vim.leader": ",",
-    "gitlens.historyExplorer.enabled": true,
     "gitlens.codeLens.enabled": false,
     "editor.minimap.enabled": false,
     "files.trimFinalNewlines": true,
@@ -68,8 +65,16 @@
     "telemetry.enableTelemetry": false,
     "breadcrumbs.enabled": true,
     "editor.wordWrap": "on",
-    "vsicons.dontShowNewVersionMessage": true,
-    "ruby.specCommand": "docker-compose run web rspec",
+    "ruby.specCommand": "rspec",
     "gitlens.views.fileHistory.enabled": true,
-    "gitlens.views.lineHistory.enabled": true
+    "gitlens.views.lineHistory.enabled": true,
+    "ruby.format": "rubocop",
+    "[ruby]": {
+      "editor.formatOnSave": true
+    },
+    "editor.formatOnSaveTimeout": 1500,
+    "ruby.locate": {
+      "exclude": "{**/@(test|spec|tmp|.*),**/@(test|spec|tmp|.*)/**,**/*_spec.rb}",
+      "include": "**/*.rb"
+    }
   }
