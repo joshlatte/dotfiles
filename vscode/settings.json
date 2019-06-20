@@ -1,6 +1,6 @@
 // Place your settings in this file to overwrite the default settings
 {
-    "window.zoomLevel": 0,
+    "window.zoomLevel": 1,
     "workbench.statusBar.visible": true,
     "editor.tabSize": 2,
 
@@ -35,7 +35,7 @@
     "workbench.iconTheme": "material-icon-theme",
     "material-icon-theme.showUpdateMessage": false,
     "explorer.autoReveal": false,
-    "workbench.colorTheme": "FlatUI Immersed",
+    "workbench.colorTheme": "Gruvbox Dark (Medium)",
     "editor.multiCursorModifier": "ctrlCmd",
     "gitlens.advanced.messages": {
       "suppressCommitHasNoPreviousCommitWarning": false,
@@ -65,6 +65,7 @@
     "telemetry.enableTelemetry": false,
     "breadcrumbs.enabled": true,
     "editor.wordWrap": "on",
+    "vsicons.dontShowNewVersionMessage": true,
     "ruby.specCommand": "rspec",
     "gitlens.views.fileHistory.enabled": true,
     "gitlens.views.lineHistory.enabled": true,
