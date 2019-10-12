@@ -5,27 +5,40 @@
 ############################
 
 ########## Variables
-
-dir=~/dotfiles                    # dotfiles directory
-olddir=~/dotfiles_old             # old dotfiles backup directory
-files="bashrc bash_profile vimrc gvimrc gitconfig gitignore git-completion.bash pryrc tmux.conf zshrc"    # list of files/folders to symlink in homedir
+dir=$PWD		                   # dotfiles directory
+olddir=$(PWD)_old		           # old dotfiles backup directory
+files="vimrc gitconfig gitignore git-completion.bash pryrc tmux.conf zshrc"    # list of files/folders to symlink in homedir
 
 ##########
 
 # create dotfiles_old in homedir
-echo "Creating $olddir for backup of any existing dotfiles in ~"
-mkdir -p $olddir
-echo "...done"
+if [ -d $olddir ]; then
+  echo "$olddir exists"
+else
+  echo "Creating $olddir for backup of any existing dotfiles in ~"
+  mkdir -p $olddir
+  echo "...done"
+fi
 
 # change to the dotfiles directory
-echo "Changing to the $dir directory"
+echo "Changing directory to $dir"
 cd $dir
-echo "...done"
 
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks
 for file in $files; do
-    echo "Moving any existing dotfiles from ~ to $olddir"
-    mv ~/.$file ~/dotfiles_old/
-    echo "Creating symlink to $file in home directory."
-    ln -s $dir/$file ~/.$file
+  if [ -L $HOME/.$file ]
+  then
+    echo "Existing symlink for .$file, skipping"
+
+  elif [ -f $HOME/.$file ] && [ ! -f $olddir/.$file ]
+  then
+    mv $HOME/.$file $olddir
+    echo "Existing $file, moving to $olddir";
+  fi
+
+  ln -s $dir/$file $HOME/.$file
+  echo "Creating symlink from $dir/$file to $HOME/.$file"
+  echo " "
 done
+
+echo "dotfiles extraction complete"
