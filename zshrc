@@ -9,6 +9,7 @@ export PATH=$HOME/local/bin:$PATH
 export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$PATH"
+export PATH="$HOME/.composer/vendor/bin:$PATH"
 
 alias dc='docker-compose'
 
