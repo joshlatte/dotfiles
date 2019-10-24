@@ -252,5 +252,8 @@ let g:jsx_ext_required = 0
 nnoremap <leader>ts :set tabstop=2 shiftwidth=2 expandtab<cr>
 nnoremap <leader>rt :retab<cr>
 
+" Emmet keymappings
+let g:user_emmet_leader_key=','
+
 " Move the preview window (code documentation) to the bottom of the screen, so it doesn't move the code!
 set splitbelow
