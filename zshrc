@@ -5,6 +5,7 @@ autoload -U colors && colors # Enable colors in prompt
 GPG_TTY=$(tty)
 
 export GPG_TTY
+export PATH="/usr/local/opt/node@10/bin:$PATH" # This is used on MB 12, can be commented out
 export PATH=$HOME/local/bin:$PATH
 export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 export PATH="$HOME/.rbenv/bin:$PATH"
