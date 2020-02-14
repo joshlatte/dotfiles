@@ -1,6 +1,9 @@
 GPG_TTY=$(tty)
 
 export GPG_TTY
+eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+
 export PATH=$HOME/local/bin:$PATH
 export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 export PATH="$HOME/.rbenv/bin:$PATH"
@@ -36,4 +39,4 @@ if [ -f "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh" ]; then
   source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
 fi
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f ~/.fzf.bash ] && source ~/.fzf.bashexport PATH="$HOME/.rbenv/bin:$PATH"
