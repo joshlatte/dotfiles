@@ -60,7 +60,7 @@ if !exists("g:syntax_on")
   syntax enable
 endif
 
-set background=light
+set background=dark
 
 " enable 256 colors
 "set t_Co=256
@@ -71,15 +71,15 @@ set background=light
 let g:gruvbox_contrast_light='soft'
 let g:gruvbox_contrast_dark='hard'
 
-"colorscheme gruvbox
-colorscheme PaperColor
+colorscheme gruvbox
+"colorscheme PaperColor
 
 highlight Normal ctermbg=NONE guibg=Black
 highlight NonText ctermbg=NONE
 
 " Airline
-let g:airline_theme='papercolor'
-"let g:airline_theme='gruvbox'
+"let g:airline_theme='papercolor'
+let g:airline_theme='gruvbox'
 
 " Fix backspace for insert mode
 set backspace=indent,eol,start
@@ -217,16 +217,22 @@ nnoremap <leader>A :Ack!<cr>
 nnoremap <leader>f :FZF<Space>
 nnoremap <leader>F :FZF<cr>
 
+" Vimux
+" Open with prompt command
+nnoremap <leader>vp :VimuxPromptCommand<cr>
 
 " Airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#ale#enabled = 1
 
 " Rspec with Dispatch
-let g:rspec_command = "Dispatch rspec {spec}"
+let g:rspec_command = "Dispatch bundle exec rspec {spec}"
 " let g:rspec_command = "Dispatch docker-compose run web rspec {spec}"
 
 " RSpec.vim mappings
+let line=getline('.')
+"nnoremap <leader>rf :ter rails test %<cr>
+
 nnoremap <leader>rf :call RunCurrentSpecFile()<cr>
 nnoremap <leader>rl :call RunNearestSpec()<cr>
 nnoremap <leader>rp :call RunLastSpec()<cr>
@@ -240,7 +246,7 @@ let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_guide_size = 1
 
 " Ctrl-p custom ignore
-set wildignore+=*/tmp/*,*/node_modules/*,*/bin/*,*/vendor/*,*.so,*.swp,*.zip,*/jenkins_home/*     " MacOSX/Linux
+set wildignore+=*/tmp/*,*/node_modules/*,*/bin/*,*/images/*,*/vendor/*,*.so,*.swp,*.zip,*/jenkins_home/*     " MacOSX/Linux
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
@@ -251,6 +257,9 @@ let g:jsx_ext_required = 0
 " Reset spaces & expand tabs
 nnoremap <leader>ts :set tabstop=2 shiftwidth=2 expandtab<cr>
 nnoremap <leader>rt :retab<cr>
+
+" Emmet keymappings
+let g:user_emmet_leader_key=','
 
 " Move the preview window (code documentation) to the bottom of the screen, so it doesn't move the code!
 set splitbelow
