@@ -1,6 +1,9 @@
 GPG_TTY=$(tty)
 
 export GPG_TTY
+eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+
 export PATH=$HOME/local/bin:$PATH
 export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 export PATH="$HOME/.rbenv/bin:$PATH"
