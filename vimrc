@@ -29,7 +29,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'wesQ3/vim-windowswap'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'sjbach/lusty'
+"Plugin 'sjbach/lusty'
 Plugin 'christoomey/vim-tmux-navigator'
 
 " Syntax and style
