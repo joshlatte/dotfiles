@@ -7,50 +7,57 @@ set lazyredraw
 set updatetime=750
 
 set rtp+=/usr/local/opt/fzf
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
 
-Plugin 'VundleVim/Vundle.vim'
+"set rtp+=~/.vim/bundle/Vundle.vim
 
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-dispatch'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'thoughtbot/vim-rspec'
-Plugin 'tpope/vim-rails'
-Plugin 'mileszs/ack.vim'
-Plugin 'junegunn/fzf.vim'
-Plugin 'benmills/vimux'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'majutsushi/tagbar'
+" Install Plug if not present
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+call plug#begin()
+
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'thoughtbot/vim-rspec'
+Plug 'tpope/vim-rails'
+Plug 'mileszs/ack.vim'
+Plug 'junegunn/fzf.vim'
+Plug 'benmills/vimux'
+Plug 'airblade/vim-gitgutter'
+Plug 'majutsushi/tagbar'
 
 " Nav and Control
-Plugin 'wesQ3/vim-windowswap'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'scrooloose/nerdtree'
-"Plugin 'sjbach/lusty'
-Plugin 'christoomey/vim-tmux-navigator'
+Plug 'wesQ3/vim-windowswap'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'scrooloose/nerdtree'
+"Plug 'sjbach/lusty'
+Plug 'christoomey/vim-tmux-navigator'
 
 " Syntax and style
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'sheerun/vim-polyglot'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'martinda/Jenkinsfile-vim-syntax'
-Plugin 'ekalinin/Dockerfile.vim'
-Plugin 'mattn/emmet-vim'
-Plugin 'w0rp/ale'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'sheerun/vim-polyglot'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'martinda/Jenkinsfile-vim-syntax'
+Plug 'ekalinin/Dockerfile.vim'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'mattn/emmet-vim'
+Plug 'w0rp/ale'
 
 " Color schemes
-Plugin 'morhetz/gruvbox'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'fugalh/desert.vim'
-Plugin 'croaker/mustang-vim'
-Plugin 'NLKNguyen/papercolor-theme'
+Plug 'morhetz/gruvbox'
+Plug 'altercation/vim-colors-solarized'
+Plug 'fugalh/desert.vim'
+Plug 'croaker/mustang-vim'
+Plug 'NLKNguyen/papercolor-theme'
 
-call vundle#end()
+call plug#end()
 filetype plugin indent on
 
 set re=1
@@ -167,6 +174,9 @@ set so=7
 " Automatically resize splits if window size changes
 autocmd VimResized * wincmd =
 
+" set filetypes as typescriptreact
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
+
 " Vim split navigation
 nnoremap <C-j> <C-W><C-J>
 nnoremap <C-k> <C-W><C-K>
@@ -205,7 +215,7 @@ vmap <leader>j :j<cr>
 " Clean whitespace
 nnoremap <leader>w :StripWhitespace<cr>
 
-" ============== Plugin Settings ==============
+" ============== Plug Settings ==============
 " Silver Searcher (ag)
 let g:ackprg = 'ag --nogroup --nocolor --column'
 " Ack with open input
