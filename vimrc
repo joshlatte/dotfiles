@@ -6,9 +6,7 @@ set ttyfast
 set lazyredraw
 set updatetime=750
 
-set rtp+=/usr/local/opt/fzf
-
-"set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=/opt/homebrew/opt/fzf
 
 " Install Plug if not present
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
@@ -26,6 +24,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'thoughtbot/vim-rspec'
 Plug 'tpope/vim-rails'
 Plug 'mileszs/ack.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'benmills/vimux'
 Plug 'airblade/vim-gitgutter'
@@ -127,10 +126,10 @@ set showmatch
 set statusline=%<%f\ %h%m%r%{FugitiveStatusline()}%=%-14.(%l,%c%V%)\ %P
 
 " Fugitive git bindings
-nnoremap <leader>ga :Git add %:p<cr><cr>
-nnoremap <leader>gs :Gstatus<cr>
+nnoremap <leader>ga :Git add -p<cr><cr>
+nnoremap <leader>gs :Git<cr>
 nnoremap <leader>gc :Gcommit -v -q %:p<cr>
-nnoremap <leader>gd :Gdiff<cr>
+nnoremap <leader>gd :Git diff<cr>
 nnoremap <leader>ge :Gedit<cr>
 nnoremap <leader>gr :Gread<cr>
 nnoremap <leader>gw :Gwrite<cr><cr>
@@ -222,10 +221,11 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 nnoremap <leader>a :Ack!<Space>
 " Ack with selected word
 nnoremap <leader>A :Ack!<cr>
+"nnoremap <leader>A :Ag!<cr>
 
 " fzf.vim
-nnoremap <leader>f :FZF<Space>
-nnoremap <leader>F :FZF<cr>
+nnoremap <leader>f :Files<cr>
+nnoremap <leader>F :Files<cr>
 
 " Vimux
 " Open with prompt command
