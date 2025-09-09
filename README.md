@@ -50,3 +50,17 @@ System setup
 9) Install redis
 * brew install redis
 ```
+
+Omarchy (Arch Linux) setup
+========
+```
+cd ~/dotfiles/omarchy
+chmod +x setup.sh
+./setup.sh
+```
+
+This will:
+- Set up Hyprland monitor configuration
+- Create symlinks for config files
+
+For MacBook keyboard LUKS fix instructions, see: `omarchy/macbook-keyboard-luks-fix.md`
