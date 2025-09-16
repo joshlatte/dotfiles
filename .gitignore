@@ -7,3 +7,4 @@ db/*.sqlite3
 tmp
 *.gem
 *.swf
+lazy-lock.json
