@@ -5,10 +5,10 @@ autoload -U colors && colors # Enable colors in prompt
 GPG_TTY=$(tty)
 
 export GPG_TTY
-export PATH="/usr/local/opt/node@10/bin:$PATH" # This is used on MB 12, can be commented out
+#export PATH="/usr/local/opt/node@10/bin:$PATH" # This is used on MB 12, can be commented out
 export PATH=$HOME/local/bin:$PATH
 export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
-export PATH="$HOME/.rbenv/bin:$PATH"
+# USING ASDF # export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$PATH"
 export PATH="$HOME/.composer/vendor/bin:$PATH"
 
@@ -33,6 +33,7 @@ PROMPT='[%n@%m %1/]%{$fg[green]%}$(parse_git_branch)%{$reset_color%} $ '
 #PS1="%~$fg[green]$parse_git_branch$reset_color $ "# The following lines were added by compinstall
 zstyle :compinstall filename '/Users/joshlatte/.zshrc'
 
+FPATH=~/.rbenv/completions:"$FPATH"
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
@@ -43,3 +44,10 @@ export FZF_TMUX_HEIGHT=15
 export FZF_DEFAULT_COMMAND='ag -g ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 #export FZF_DEFAULT_OPTS=''
+
+#. /opt/homebrew/opt/asdf/libexec/asdf.sh
+#export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+export PATH="$PATH:/opt/X11/bin"
+
+. "$HOME/.local/bin/env"

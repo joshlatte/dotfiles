@@ -21,33 +21,31 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-Plug 'thoughtbot/vim-rspec'
+Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-rails'
+Plug 'thoughtbot/vim-rspec'
 Plug 'mileszs/ack.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'benmills/vimux'
+Plug 'preservim/vimux'
 Plug 'airblade/vim-gitgutter'
-Plug 'majutsushi/tagbar'
 
 " Nav and Control
 Plug 'wesQ3/vim-windowswap'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'scrooloose/nerdtree'
-"Plug 'sjbach/lusty'
+Plug 'preservim/nerdtree'
 Plug 'christoomey/vim-tmux-navigator'
 
 " Syntax and style
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'sheerun/vim-polyglot'
-Plug 'nathanaelkane/vim-indent-guides'
+Plug 'preservim/vim-indent-guides'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'ekalinin/Dockerfile.vim'
-Plug 'peitalin/vim-jsx-typescript'
+Plug 'peitalin/vim-jsx-typescript' " Mabe not needed
 Plug 'mattn/emmet-vim'
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 
 " Color schemes
 Plug 'morhetz/gruvbox'
@@ -86,6 +84,7 @@ highlight NonText ctermbg=NONE
 " Airline
 "let g:airline_theme='papercolor'
 let g:airline_theme='gruvbox'
+"let g:airline_theme='bubblegum'
 
 " Fix backspace for insert mode
 set backspace=indent,eol,start
@@ -115,15 +114,21 @@ set wildmenu
 " Current position
 set ruler
 
-" Set line numbers
-set number
+" Set hybrid line numbers
+set number relativenumber
 
 " Show matching brackets when cursor is over
 set showmatch
 
 " Statusline config
 "set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
-set statusline=%<%f\ %h%m%r%{FugitiveStatusline()}%=%-14.(%l,%c%V%)\ %P
+"set statusline=%<%f\ %h%m%r%{FugitiveStatusline()}%=%-14.(%l,%c%V%)\ %P
+set statusline=
+      \%<%f                         " Filename (truncated if needed)
+      \\ %{FugitiveHead()}          " Current git branch name (cleaner than FugitiveStatusline)
+      \%=                           " Switch to right side
+      \%l:%c                        " Line:column
+      \\ %P                         " Percentage through file
 
 " Fugitive git bindings
 nnoremap <leader>ga :Git add -p<cr><cr>
@@ -227,16 +232,56 @@ nnoremap <leader>A :Ack!<cr>
 nnoremap <leader>f :Files<cr>
 nnoremap <leader>F :Files<cr>
 
+"""""" REMOVE
+let g:fzf_vim = {}
+" Use location list instead of quickfix list
+let g:fzf_vim.listproc = { list -> fzf#vim#listproc#location(list) }
+" An action can be a reference to a function that processes selected lines
+function! s:build_quickfix_list(lines)
+  call setqflist(map(copy(a:lines), '{ "filename": v:val, "lnum": 1 }'))
+  copen
+  cc
+endfunction
+
+set grepprg=rg\ --vimgrep
+set grepformat^=%f:%l:%c:%m
+
+""""""" /REMOVE
+
+
 " Vimux
 " Open with prompt command
 nnoremap <leader>vp :VimuxPromptCommand<cr>
 
 " Airline
+let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#branch#enabled = 1
+
+" let g:airline_section_b = '%{strftime("%c")}'
+" let g:airline_section_y = 'BN: %{bufnr("%")}'
+let g:airline#extensions#tabline#left_sep = ''
+let g:airline#extensions#tabline#left_alt_sep = ''
 let g:airline#extensions#ale#enabled = 1
 
 " Rspec with Dispatch
-let g:rspec_command = "Dispatch bundle exec rspec {spec}"
+function! GetProjectRoot()
+  let l:git_root = system('git rev-parse --show-toplevel 2>/dev/null')
+  if v:shell_error == 0
+    return substitute(l:git_root, '\n$', '', '') . '/'
+  else
+    return fnamemodify('.', ':p')
+  endif
+endfunction
+
+" Check if bin/docker-test exists in the project root
+if filereadable(GetProjectRoot() . 'bin/docker-test')
+  let g:rspec_command = "call VimuxRunCommand('bin/docker-test {spec}')"
+else
+  let g:rspec_command = "call VimuxRunCommand('bundle exec rspec {spec}')"
+endif
+
+" let g:rspec_command = "Dispatch bundle exec rspec {spec}"
 " let g:rspec_command = "Dispatch docker-compose run web rspec {spec}"
 
 " RSpec.vim mappings

@@ -1,5 +1,5 @@
 Pry.config.theme = "tomorrow"
-if defined?(Pry || PryDebugger)
+if defined?(Pry || PryDebugger || PryByeBug)
   Pry.commands.alias_command 'c', 'continue'
   Pry.commands.alias_command 's', 'step'
   Pry.commands.alias_command 'n', 'next'
