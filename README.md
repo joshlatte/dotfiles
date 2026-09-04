@@ -32,7 +32,7 @@ What it adds
 |---|---|
 | `Ctrl+h` / `j` / `k` / `l` | Focus pane left / down / up / right |
 | `prefix` + `Ctrl+L` | Clear the visible screen, **keep** scrollback (prefix is `Ctrl+a`) |
-| `prefix` + `Ctrl+X` | Clear screen **and** wipe scrollback — destructive, not undoable |
+| `prefix` + `Ctrl+K` | Clear screen **and** wipe scrollback — destructive, not undoable |
 
 Pane navigation is passed through to the editor when the pane is running
 vim/nvim/view/gvim/helix, so editor splits keep working. Detection uses a tmux
