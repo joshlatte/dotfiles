@@ -52,6 +52,29 @@ Pairs with `christoomey/vim-tmux-navigator` on the nvim side (spec in
 `omarchy/nvim/lua/plugins/`, part of the deprecated tree). Not required — the
 tmux side detects editors by process name and works standalone.
 
+Current: Hyprland on the MacBook10,1
+========
+
+**This machine only.** `omarchy/hypr/macbook10-1/` holds hardware-specific
+Hyprland config for the 2017 MacBook10,1 and is wrong on anything else:
+
+- `monitors.lua` — 1.6 scale for the 2304x1440 panel, plus a Dell S2721DGF
+  docked to the physical left at 1.25 scale
+- `input.lua` — MacBook trackpad: tap-to-click off, middle-click-paste off
+
+```
+~/dotfiles/omarchy/hypr/macbook10-1/install.sh
+```
+
+The script reads `/sys/class/dmi/id/product_name` and **refuses to run** unless
+it reports `MacBook10,1`. Don't remove that guard — these symlinks on another
+box give you a wrong display layout and a trackpad that feels broken. It
+symlinks both files, then validates with `hyprctl reload` + `hyprctl
+configerrors`. Idempotent.
+
+`bindings.lua` is deliberately not tracked: it currently has zero non-comment
+lines, so there is nothing machine-specific to keep.
+
 Deprecated
 ========
 
@@ -68,7 +91,8 @@ system. Both scripts exit unless passed `--i-know-this-is-deprecated`.
   `monitors.lua`) and never reads those `.conf` files, so the symlinks land
   dead. It also replaces `~/.config/nvim` and `~/.config/alacritty` with stale
   copies.
-- **`omarchy/hypr/*.conf`** — superseded by the Lua config above.
+- **`omarchy/hypr/*.conf`** — dead. Current Omarchy reads `.lua`; these
+  `.conf` files are never loaded. Superseded by `omarchy/hypr/macbook10-1/`.
 - **`omarchy/nvim/`, `omarchy/alacritty/`** — never installed on the current
   machine; the live configs were set up directly.
 - **`vimrc`, `gvimrc`, `zshrc`, `bashrc`, `bash_profile`, `pryrc`, `gitconfig`,
