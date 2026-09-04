@@ -1,5 +1,28 @@
 #!/bin/bash
 ############################
+# !! DEPRECATED -- DO NOT RUN !!
+#
+# Symlinks an old macOS-era dotfiles set into $HOME. On an Omarchy box the
+# `tmux.conf` entry is actively harmful: tmux loads BOTH ~/.tmux.conf and
+# ~/.config/tmux/tmux.conf, so this drags the old config in underneath
+# Omarchy's and clobbers terminal-overrides (killing truecolor).
+#
+# Kept for reference/history only. Nothing here is maintained and it has NOT
+# been verified against a current Omarchy install.
+#
+# For the one piece that is still current, see: omarchy/tmux/install.sh
+############################
+if [ "${1:-}" != "--i-know-this-is-deprecated" ]; then
+    echo "This script is DEPRECATED and is not safe to run as-is." >&2
+    echo "It symlinks a stale macOS dotfiles set and breaks tmux truecolor on Omarchy." >&2
+    echo "" >&2
+    echo "Current setup: omarchy/tmux/install.sh" >&2
+    echo "" >&2
+    echo "To run anyway: $0 --i-know-this-is-deprecated" >&2
+    exit 1
+fi
+
+############################
 # .make.sh
 # This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
 ############################

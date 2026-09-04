@@ -1,5 +1,28 @@
 #!/bin/bash
 ############################
+# !! DEPRECATED -- DO NOT RUN !!
+#
+# Written for an older Omarchy that used ~/.config/hypr/*.conf. Current
+# Omarchy uses Lua (bindings.lua, input.lua, monitors.lua) and never reads
+# the .conf files this symlinks -- they land as dead files. It also
+# REPLACES ~/.config/nvim and ~/.config/alacritty with stale copies.
+#
+# Kept for reference/history only. Nothing here is maintained and it has NOT
+# been verified against a current Omarchy install.
+#
+# For the one piece that is still current, see: omarchy/tmux/install.sh
+############################
+if [ "${1:-}" != "--i-know-this-is-deprecated" ]; then
+    echo "This script is DEPRECATED and is not safe to run as-is." >&2
+    echo "It creates dead hypr/*.conf symlinks and replaces your live nvim + alacritty configs." >&2
+    echo "" >&2
+    echo "Current setup: omarchy/tmux/install.sh" >&2
+    echo "" >&2
+    echo "To run anyway: $0 --i-know-this-is-deprecated" >&2
+    exit 1
+fi
+
+############################
 # Omarchy (Arch Linux) setup script
 # This script sets up Hyprland configs and other Arch-specific settings
 ############################
